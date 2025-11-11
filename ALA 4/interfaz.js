@@ -68,7 +68,7 @@ async function editarTareaIO(tareaOriginal) {
 
     // Mostrar detalles de la tarea actualizada para confirmación
     const tareaActualizada = buscarTareaPorId(globalTareas, tareaOriginal.id);
-    limpiarYMostrar("✅ Tarea actualizada correctamente:");
+    limpiarYMostrar("Tarea actualizada correctamente:");
     
     if (tareaActualizada) {
         console.log(`ID: ${tareaActualizada.id}`);
@@ -92,7 +92,7 @@ async function mostrarListaYDetallesIO(lista, volverFunc = menu) {
         return respuesta === "0" ? volverFunc() : menu();
     }
 
-    limpiarYMostrar("📋 Lista de Tareas:");
+    limpiarYMostrar("Lista de Tareas:");
     lista.map(t => console.log(` ${t.id} - ${t.titulo} (${t.estado})`));
 
     const idTarea = await obtenerEntrada("Ingrese el ID de la tarea para ver detalles o 0 para volver: ");
